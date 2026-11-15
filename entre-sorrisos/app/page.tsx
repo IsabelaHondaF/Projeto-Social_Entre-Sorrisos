@@ -17,7 +17,7 @@ export default function Home() {
         // div primeira tela (navbar + introdução e imagem do fundador)
         className="h-screen"
         >
-          <NavbarClaro></NavbarClaro>
+          <NavbarClaro variante="claro" ></NavbarClaro>
           <div className="bg-[#EBE4FF] w-full flex flex-row justify-end">
             <div className="bg-[#FE914E] opacity-80 w-2/5 p-6 text-[#8B52FE]">
               <div className="aspect-square w-1/2 bg-white content-center rounded-full">
