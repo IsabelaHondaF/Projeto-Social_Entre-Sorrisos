@@ -10,7 +10,7 @@ const gendy = localFont({
   display: "swap",
 });
 
-// Duas versões do menu, mesma estrutura e mesmas posições:
+// Duas versões do menu, mesma estrutura, mesmas posições e mesma proporção:
 //   <Navbar />                    -> escura (página do voluntário)
 //   <Navbar variante="claro" />   -> clara (página inicial)
 const temas = {
@@ -40,19 +40,12 @@ export default function NavbarClaro({ variante = "escuro" }: Props) {
   const link = `${base} text-[1.2cqw]`;
   const linkInicio = `${base} text-[1.5cqw]`;
 
-  // Versão clara: ocupa a largura toda da tela (página inicial).
-  // Versão escura: largura limitada pela altura da janela (página do voluntário).
-  const largura =
-    variante === "claro" ? "w-full" : "w-[min(100vw,127vh)]";
-
   return (
     <div
-      className={`${gendy.className} ${tema.fundo}`}
+      className={`${gendy.className} ${tema.fundo} [container-type:inline-size]`}
       style={{ fontWeight: 400 }}
     >
-      <header
-        className={`relative mx-auto h-[6.667cqw] ${largura} [container-type:inline-size]`}
-      >
+      <header className="relative mx-auto h-[6.667cqw] w-full">
         <Link href="/">
           <img
             src="/logo.png"
